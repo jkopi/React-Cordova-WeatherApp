@@ -8,24 +8,24 @@ class Weather extends React.Component {
                 <div className="weather-data">
                     {
                         this.props.temperature &&
-                            <h1><i className="fas fa-cloud"></i> {this.props.temperature} °C</h1>
+                            <h2>{this.props.city} <img src={"https://www.countryflags.io/" + this.props.country +"/shiny/32.png"} id="flag" alt="flag"/></h2>
                     }
                     {
                         this.props.country && this.props.city &&
-                        <p><h4>Location:</h4>
-                            <span>  {this.props.city}, {this.props.country}</span>
+                        <p><h6>Temperature:</h6>
+                            <span>  {this.props.temperature} °C </span>
                         </p>
                     }
                     {
                         this.props.humidity &&
-                        <p><h4>Humidity:</h4>
-                            <span>  {this.props.humidity} % <i className="fas fa-tint"></i></span>
+                        <p><h6>Humidity:</h6>
+                            <span>  {this.props.humidity} %</span>
                         </p>
                     }
                     {
                         this.props.description &&
-                        <p><h4>Conditions:</h4>
-                            <span>  {this.props.description}</span>
+                        <p><h6>Conditions:</h6>
+                            <span><img src={"http://openweathermap.org/img/w/" + this.props.weather_icon + ".png"} alt="weather" id="imgweather" className="img-fluid d-block mx-auto"/>  <i>~{this.props.description}~</i></span>
                         </p>
                     }
                     </div>

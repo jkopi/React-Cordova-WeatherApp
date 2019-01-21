@@ -5,7 +5,7 @@ class Footer extends Component {
         return (
             <div className="footer-text">
                 <hr/>
-                <p><i>Made with Apache Cordova and React.JS</i></p>
+                <p><i>Made with <b>Apache Cordova</b>, <b>React.js</b> and <b>Openweathermap API</b></i></p>
                 <i className="wi wi-night-sleet"></i>
             </div>
         );
