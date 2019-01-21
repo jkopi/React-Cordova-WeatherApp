@@ -2,38 +2,39 @@ import React from 'react';
 
 class Weather extends React.Component {
     render() {
+
         return (
-            <div className="weather-data">
-                {
-                    this.props.country && this.props.city &&
-                    <p>Location:
-                        <span className="weather__value">  {this.props.city}, {this.props.country}</span>
-                    </p>
-                }
-                {
-                    this.props.temperature &&
-                    <p>Temperature:
-                        <span>  {this.props.temperature} °C</span>
-                    </p>
-                }
-                {
-                    this.props.humidity &&
-                    <p>Humidity:
-                        <span>  {this.props.humidity} %</span>
-                    </p>
-                }
-                {
-                    this.props.description &&
-                    <p>Conditions:
-                        <span>  {this.props.description}</span>
-                    </p>
-                }
-                {
-                    this.props.error &&
-                    <p>
-                        {this.props.error}
-                    </p>
-                }
+            <div className="weather-container">
+                <div className="weather-data">
+                    {
+                        this.props.temperature &&
+                            <h1><i className="fas fa-cloud"></i> {this.props.temperature} °C</h1>
+                    }
+                    {
+                        this.props.country && this.props.city &&
+                        <p><h4>Location:</h4>
+                            <span>  {this.props.city}, {this.props.country}</span>
+                        </p>
+                    }
+                    {
+                        this.props.humidity &&
+                        <p><h4>Humidity:</h4>
+                            <span>  {this.props.humidity} % <i className="fas fa-tint"></i></span>
+                        </p>
+                    }
+                    {
+                        this.props.description &&
+                        <p><h4>Conditions:</h4>
+                            <span>  {this.props.description}</span>
+                        </p>
+                    }
+                    </div>
+                    {
+                        this.props.error &&
+                        <p className="alert alert-danger" role="alert">
+                            {this.props.error}
+                        </p>
+                    }
             </div>
         );
     }

@@ -1,6 +1,8 @@
 import React from 'react';
 import WeatherForm from "./components/Form/WeatherForm";
 import Weather from "./components/Weather/Weather";
+import Header from "./components/Header/header";
+import Footer from "./components/Footer/Footer";
 
 const API_KEY = "7bb630e4173b279b11793ccbac6686d5";
 
@@ -33,36 +35,43 @@ class App extends React.Component {
             })
         } else {
             this.setState({
-                error:"Please enter search value.."
+                error:"Please enter search values!"
             })
         }
     };
 
+    componentDidUpdate() {
+        if ( this.state.temperature <= 0) {
+            return (
+                console.log("Its pretty cold man!")
+            );
+        } else if (this.state.temperature >= 0) {
+            return(
+                console.log("Its not that cold!")
+            );
+        }
+    }
+
     render () {
         return (
             <div>
-                <div>
-                    <div>
-                        <div>
-                            <div>
-                                <div>
-                                    <p>Title comes here :P</p>
-                                </div>
-                                <div>
-                                    <WeatherForm loadWeather={this.getWeather} />
-                                    <Weather
-                                        temperature={this.state.temperature}
-                                        city={this.state.city}
-                                        country={this.state.country}
-                                        humidity={this.state.humidity}
-                                        description={this.state.description}
-                                        error={this.state.error}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div className="container">
+                <div className="col-sm ">
+                    <Header/>
                 </div>
+                <div className="col-sm">
+                    <WeatherForm loadWeather={this.getWeather} />
+                    <Weather
+                        temperature={this.state.temperature}
+                        city={this.state.city}
+                        country={this.state.country}
+                        humidity={this.state.humidity}
+                        description={this.state.description}
+                        error={this.state.error}
+                    />
+                    </div>
+                <Footer/>
+            </div>
             </div>
         )
     }

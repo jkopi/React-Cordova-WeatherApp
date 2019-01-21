@@ -1,1 +1,36 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
 
+.weather-container {
+    text-align: center;
+}
+
+.weather-data {
+    text-align: center;
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+
+.footer-text {
+    text-align: center;
+}
+
+.container {
+    border: 1px solid grey;
+    background-color: rgba(147, 188, 255, 0.5);
+}
+
+.img-bg {
+    background-image: url("../img/backImage.jpg");
+    height: 1080px;
+}
+
+.centered {
+    padding: 10px;
+    text-align: center;
+}
+
+.btn-container {
+    text-align: center;
+}
