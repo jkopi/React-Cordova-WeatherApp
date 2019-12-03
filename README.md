@@ -15,11 +15,11 @@ android/ios device
 ### Install the app
 ```
 npm install
-cordova add platform <ios/android>
+cordova platform add <ios/android/browser>
 ```
 ### Run the app
 ```
-cordova run <ios/android>
+cordova run <ios/android/browser>
 ```
 
 ### Built with
