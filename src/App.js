@@ -5,7 +5,7 @@ import Header from "./components/Header/header";
 import Footer from "./components/Footer/Footer";
 import cityList from "./components/Cities/citylist.json";
 
-const API_KEY = "7bb630e4173b279b11793ccbac6686d5";
+const API_KEY = "";
 
 class App extends React.Component {
         state = {
